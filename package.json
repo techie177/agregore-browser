@@ -146,7 +146,8 @@
       "target": [
         "deb",
         "AppImage",
-        "apk"
+        "apk",
+        "rpm"
       ],
       "category": "Network;FileTransfer:P2P"
     }
