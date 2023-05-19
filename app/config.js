@@ -1,5 +1,6 @@
-const { app } = require('electron')
-const path = require('path')
+import { app } from 'electron'
+import path from 'path'
+import RC from 'rc'
 
 const USER_DATA = app.getPath('userData')
 const DEFAULT_EXTENSIONS_DIR = path.join(USER_DATA, 'extensions')
@@ -10,7 +11,7 @@ const DEFAULT_BT_DIR = path.join(USER_DATA, 'bt')
 
 const DEFAULT_PAGE = 'agregore://welcome'
 
-module.exports = require('rc')('agregore', {
+export default RC('agregore', {
   accelerators: {
     OpenDevTools: 'CommandOrControl+Shift+I',
     NewWindow: 'CommandOrControl+N',
@@ -53,6 +54,12 @@ module.exports = require('rc')('agregore', {
       enabled: false
     },
     config: {
+      Ipns: {
+        UsePubsub: true
+      },
+      Pubsub: {
+        Enabled: true
+      },
       Addresses: {
         API: '/ip4/127.0.0.1/tcp/2473',
         Gateway: '/ip4/127.0.0.1/tcp/2474',
